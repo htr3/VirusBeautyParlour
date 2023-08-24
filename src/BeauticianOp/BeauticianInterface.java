@@ -8,9 +8,10 @@ public class BeauticianInterface {
 	
 	public void serviceDetail() {
 		System.out.println("What are the services you handle"); 
+		
 	}
 	 
-	public void menu() {
+	public void menu(int beauticianId) {
 		Scanner input = new Scanner(System.in);
 		int choice = -1; 
 		do{
@@ -28,7 +29,7 @@ public class BeauticianInterface {
 				break; 
 			case 2: 
 				Appointments appointments = new Appointments();
-		        appointments.viewUpcomingAppointments(1);
+		        appointments.viewUpcomingAppointments(beauticianId);
 				break; 
 			case 3: 
 				this.serviceDetail();

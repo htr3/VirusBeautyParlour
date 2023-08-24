@@ -53,13 +53,12 @@ public class UserRegistration {
 		}
 		// store this information into the db 
 		
-		 Connection connection = dbmysql.getConnection(); // Assuming you have a method to get the connection
-
-	        // Prepare the SQL insert statement
+		 Connection connection = dbmysql.getConnection(); 
+		 
 	        String insertQuery = "INSERT INTO Customer (username, password, name, DOB, contact, gender, age) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
 	        try {
-	            // Create a prepared statement
+	            
 	            PreparedStatement preparedStatement = connection.prepareStatement(insertQuery);
 	            preparedStatement.setString(1, username);
 	            preparedStatement.setString(2, password);
@@ -90,7 +89,7 @@ public class UserRegistration {
 	            }
 	        }
 		System.out.println("You are successfully Registered"); 
-		
+	
 		UserLogin user = new UserLogin(); 
 		user.login(); 
 		

@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class userInterface {
 		 
-	public void menu() {
+	public void menu(int customerId) {
 		Scanner input = new Scanner(System.in);
 		int choice = -1; 
 		do{
@@ -18,15 +18,15 @@ public class userInterface {
 			switch(choice) {
 			case 1: 
 				EditUserProfile eup = new EditUserProfile(); 
-				eup.editProfile(1);
+				eup.editProfile(customerId);
 				break; 
 			case 2: 
 				ServiceAppointment sa = new ServiceAppointment(); 
-				sa.service(1);
+				sa.service(customerId);
 				break; 
 			case 3: 
 				AppointmentHistory ah = new AppointmentHistory(); 
-				ah.displayAppointmentHistory(1);
+				ah.displayAppointmentHistory(customerId);
 				break; 
 			case 0:
 			    break; 

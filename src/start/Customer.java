@@ -9,7 +9,7 @@ public class Customer {
 		Scanner input = new Scanner(System.in); 
 		
 		public void customer() {
-			  int choice = input.nextInt();
+			 int choice = -1; 
 			  
 				do { 
 				 System.out.println("........................"); 
@@ -19,7 +19,7 @@ public class Customer {
 				  System.out.println("........................."); 
 				  
 				 
-				  
+				   choice = input.nextInt();
 				  
 					  
 					  switch(choice) {

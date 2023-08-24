@@ -8,9 +8,19 @@ import java.util.Scanner;
 import DBConnection.dbmysql; 
 
 public class EmployeeManagement {
-	
+
+	private String username; 
+	private String fullName; 
+	private String email; 
+	private String phoneNumber; 
+	private String hireDate; 
+	private String role; 
+	private String password; 
+	private int adminId; 
+	int beauticianId; 
+	Scanner input = new Scanner(System.in);	
 	public void beauticianManagement() {
-		Scanner input = new Scanner(System.in);	
+		
 		
 		int choice = -1; 
 		
@@ -26,7 +36,8 @@ public class EmployeeManagement {
 			
 			switch(choice) {
 			case 1:
-				addBeautician("sdf", "sdf", "asdf", "adsf", "dsaf", "asdf", "asdf", 1);
+				
+				addBeautician();
 				break; 
 			case 2: 
 				editBeautician(20,"active", "updated","12-12-12" ); 
@@ -35,7 +46,7 @@ public class EmployeeManagement {
 				showAllBeauticians(); 
 				break; 
 			case 4: 
-				deleteBeautician(1); 
+				deleteBeautician(adminId); 
 			case 0:
 				return; 
 				
@@ -50,8 +61,25 @@ public class EmployeeManagement {
 	}
 		
 	
-    public void addBeautician(String username, String password, String fullName, String email, String phoneNumber, String hireDate, String role, int adminId) {
-        Connection connection = dbmysql.getConnection(); 
+    public void addBeautician() {
+
+
+		System.out.println("Enter username");
+		username = input.nextLine();  
+		System.out.println("fullName");
+		fullName = input.nextLine(); 
+		System.out.println("email");
+		email = input.nextLine(); 
+		System.out.println("phoneNumber");
+		phoneNumber = input.nextLine(); 
+		System.out.println("hireDate");
+		hireDate = input.nextLine(); 
+		System.out.println("role");
+		role = input.nextLine(); 
+		System.out.println("password");
+		password = input.nextLine();  
+		    	
+    	Connection connection = dbmysql.getConnection(); 
         
         try {
             String query = "INSERT INTO Beautician (username, password, full_name, email, phone_number, hire_date, role, admin_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

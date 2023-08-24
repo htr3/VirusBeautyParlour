@@ -17,11 +17,13 @@ public class Status {
 		
 		switch(choice) {
 		case 1: 
-			
+			System.out.println("Appointment status"); 
 			break; 
 		case 2: 
+			System.out.println("Beautician status"); 
 			break; 
 		case 3: 
+			System.out.println("customer status"); 
 			break; 
 		case 0: 
 			return; 

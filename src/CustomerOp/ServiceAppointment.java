@@ -9,7 +9,7 @@ import DBConnection.dbmysql; // Import your DBConnection class here or wherever 
 
 public class ServiceAppointment {
 	Scanner input = new Scanner(System.in); 
-    public void service(int userId) {
+    public void service(int customerId) {
         Connection connection = dbmysql.getConnection(); // Assuming you have a getConnection() method in your DBConnection class
         
         try {
@@ -48,7 +48,9 @@ public class ServiceAppointment {
         int serviceId = input.nextInt(); 
         
         Appointment a = new Appointment(); 
-        a.bookAppointment(1,1,1);
+        
+        a.bookAppointment(1, customerId, serviceId);
+//        (int beauticianId, int customerId, int serviceId
     }
     
     

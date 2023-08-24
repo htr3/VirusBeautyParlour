@@ -3,7 +3,7 @@ package AdminOp;
 import java.util.Scanner;
 
 public class AdminInterface {
-		public void menu() {
+		public void menu(int adminId) {
 			Scanner input = new Scanner(System.in);
 			
 			int choice = -1; 
@@ -12,7 +12,7 @@ public class AdminInterface {
 				
 				System.out.println("1. show profiles"); 
 				System.out.println("2. Management"); 
-				System.out.println("3. Login"); 
+//				System.out.println("3. Login"); 
 				System.out.println("0. exit"); 
 				
 				
@@ -21,21 +21,22 @@ public class AdminInterface {
 				switch(choice) {
 				case 1: 
 					Profile  ap = new Profile(); 
-					ap.profile(1);
+					ap.profile(adminId);
 					// show profile. 
 					break; 
 				case 2: 
 					// management
 					Management m = new Management();
-					m.management(1);
+					m.management(adminId);
 					break; 
-				case 3: 
-					Login l = new Login(); 
-					l.login();
-					break; 
+//				case 3: 
+//					Login l = new Login(); 
+//					l.login();
+//					break; 
 				
 				case 0: 
-					break; 
+					return; 
+//					break; 
 				default: 
 					System.out.println("Please Enter a Valid Option "); 
 					break; 

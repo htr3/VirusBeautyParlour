@@ -42,14 +42,16 @@ import java.sql.SQLException;
 
 public class dbmysql {
     private static final String jdbcUrl = "jdbc:mysql://localhost:3306/beautyparlour";
-    private static final String username = "vish";
-    private static final String password = "1234";
+    private static final String username = "root";
+    private static final String password = "root";
 
     public static Connection getConnection() {
+    //public static void main(String[] args) {
         Connection connection = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
             connection = DriverManager.getConnection(jdbcUrl, username, password);
+            //System.out.println("Connection done"); 
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
